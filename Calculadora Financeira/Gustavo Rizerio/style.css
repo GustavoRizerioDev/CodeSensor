@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: "Roboto", sans-serif;
+    margin: 0 auto;
+}
+
+.conteudo__principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f6f0e426;
+    
+}
+
+.secao__principal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: .0625rem solid black;
+    border-radius: 15px;
+
+    padding: 48px;
+
+    background-color: #f6f0e451;
+    box-shadow: 1px 9px 30px -13px rgba(0,0,0,0.75);
+}
+
+.titulo__principal {
+    text-align: center;
+    font-size: 1.875rem;
+    font-weight: 700;
+}
+
+.container__dados {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container__perda {
+    text-align: center;
+}
+
+.perda__paragrafo {
+    color: #FF0000;
+}
+
+
+.container__dados label,
+.container__perda label {
+    display: block;
+    margin: .3125rem;
+    font-weight: bold;
+}
+
+.container__dados input,
+.container__perda input {
+    padding: .5rem;
+    width: 12.5rem;
+    border: .0625rem solid #ccc;
+    border-radius: .3125rem;
+    font-size: 1rem;
+}
+
+.container__dados button,
+.container__perda button {
+    padding: .625rem 1.25rem;
+    margin-top: 1.25rem;
+    background-color: #ff5e5e;
+    /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    border-radius: .3125rem;
+    cursor: pointer;
+}
+
+/* .img__principal{
+    width: 25rem;
+    border: .0625rem solid black;
+    height: fit-content;
+} */

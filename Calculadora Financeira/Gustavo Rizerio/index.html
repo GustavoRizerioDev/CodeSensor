@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <main class="conteudo__principal">
+        <section class="secao__principal">
+            <div class="container__dados">
+                <h1 class="titulo__principal">Simulador Financeiro de investimento</h1>
+                <label for="input_capacidade">
+                    Capacidade media de carga dos seus caminhões:
+                </label>
+                <input type="number" id="input_capacidade" placeholder="10000" min="1" required>
+                <label for="input_preco_carne">
+                    Preço da carne bovina (por kg):​
+                </label>
+                <input type="number" id="input_preco_carne" placeholder="30" min="1" required>
+                <button onclick="mediaPrecoPorCarregamento()">
+                    Calcular media total por carregamento
+                </button>
+                <p id="p_preco_total"></p>
+            </div>
+            <div class="container__perda">
+                <h2>Quanto se perde?</h2>
+                <p class="perda__paragrafo">As perdas variam entre 3% à 8% durante o carregamento.​</p>
+                <p id="p_perda"></p>
+
+                <label>Quanto vc gostaria de investir para minimizar suas perdas?</label>
+                <input type="number" id="input_investimento" placeholder="investimento">
+                <button onclick="mostrarInvestimento()">Mostar investimento</button>
+                <p id="p_investimento"></p>
+            </div>
+        </section>
+        <!--         <img src="img/financeiro_capa.jpg" alt="" class="img__principal">
+       -->
+    </main>
+</body>
+
+</html>
