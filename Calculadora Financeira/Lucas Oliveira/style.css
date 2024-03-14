@@ -1,0 +1,95 @@
+body {
+    background-color:#F6F0E4;
+}
+
+.tudo2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.title {
+    padding: 5px;
+    text-align: left;
+    margin-left: 30%;
+    color: rgb(110, 0, 0);
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.box {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(110, 0, 0);
+    text-align: center;
+    border: 500px;
+    height: 100%;
+    width: 40%;
+    border-radius: 50px;
+    color: white;
+    box-shadow: 10px 10px 10px rgba(2, 2, 5, 0.502);
+    border: solid tan 5px;
+}
+
+#input_qtd_caminhoes {
+    border-radius: 10px;
+    height: 20px;
+}
+
+#input_capacidade_caminhao {
+    border-radius: 10px;
+    height: 20px;
+}
+
+#input_tipo_carga  {
+    border-radius: 10px;
+    height: 20px;
+}
+
+#input_preco_carne {
+    border-radius: 10px;
+    height: 20px;
+}
+
+#input_percas_aprox {
+    border-radius: 10px;
+    height: 20px;
+}
+
+#input_qtd_entregas {
+    border-radius: 10px;
+    height: 20px;
+}
+
+.button {
+    border-radius: 50px;
+    border: solid gray 1px;
+    padding: 15px;
+    font-size: 15px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold; 
+    background-color: #F6F0E4;
+    color: black;
+    transition: ease-in-out 0.2s;
+    box-shadow: 5px 2px 5px rgba(2, 2, 5, 0.502);
+}
+
+.button:hover {
+    cursor: pointer;
+    padding: 25px;
+    background-color: black;
+    color: #FFFFFF;
+
+}
+
+.mensagens {
+    text-align: center;
+    align-items: end;
+    color: black;
+    padding: 30px;
+}
+
+.h2_mensagem {
+    font-weight: 100;
+}
+
+.h2_mensagem2 {
+    font-weight: 100;
+}

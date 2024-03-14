@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="tudo">
+
+        <h1 class="title">Calcule quanto deixará de perder conosco!</h1>
+        <div class="tudo2">
+            <div class="box">
+                <div class="inputs">
+                    <br>
+                    <h3>Quantos caminhões você irá usar para transportar a carne?</h3>
+                    <input type="number" id="input_qtd_caminhoes">
+
+                    <h3>Digite a capacidade do(s) caminhão(ões)</h3>
+                    <input type="number" placeholder="Em Kg" id="input_capacidade_caminhao">
+
+                    <h3>Qual tipo de carne você irá transportar (apenas 1)</h3>
+                    <input type="text" placeholder="Bovina, Suína ou aves" id="input_tipo_carga">
+
+                    <h3>Preço aproximado de cada carne no varejo</h3>
+                    <input type="number" placeholder="Preço unitário" id="input_preco_carne">
+
+                    <h3>Quantas entregas você faz por dia</h3>
+                    <input type="number" id="input_qtd_entregas">
+                    <br><br>
+                    <button class="button" onclick="calcularPerdaLucros()">Calcular</button>
+                </div>
+
+            </div>
+            <div class="mensagens">
+                <p id="p_mensagem"></p>
+                <p id="p_mensagem2"></p>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    function calcularPerdaLucros() {
+
+        var qtd_caminhoes = Number(input_qtd_caminhoes.value)
+        var capacidade = Number(input_capacidade_caminhao.value)
+        var tipo_carga = input_tipo_carga.value
+        var preco = Number(input_preco_carne.value)
+        var qtd_entregas = Number(input_qtd_entregas.value)
+
+        var valorCaminhao = capacidade * preco
+        var valorDiario = qtd_entregas * valorCaminhao
+
+        var porcentagemPercas = valorCaminhao * 0.5
+        var investimento = porcentagemPercas * 0.92
+
+
+        p_mensagem.innerHTML = `
+        <h2 class ="h2_mensagem">Utilizando <b>${qtd_caminhoes}</b> caminhão(ões) de <b>${capacidade}Kg</b> cada, transportando carnes do tipo <b>${tipo_carga}</b> no preço de varejo de <b>R$${preco}</b>, consegue transportar <b>~R$${valorCaminhao}</b> em carnes.<br>
+        Fazendo <b>${qtd_entregas}</b> entregas por dia, você gastaria <b>R$${valorDiario}</b> diariamente.</h2><br><br><br>`
+
+        p_mensagem2.innerHTML = `
+        <h2 class ="h2_mensagem2">Em cada transporte, você pode ter uma perca de <b>3% a 8%</b> na sua carga.<br>
+        Você está perdendo em cada transporte uma média de <b>R$${porcentagemPercas}</b>.<br>
+        Com nossos serviçoes você irá investir <b>R$40000</b> e deixará de perder <b>R$${investimento}</b>!</h2>
+        `
+    }
+</script>
