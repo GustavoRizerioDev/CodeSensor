@@ -23,9 +23,9 @@
                 <p>Em média, qual é a carga máxima de seus veículos durante o transporte? (Em kg)</p>
                 <input id="input_max_carga"><br>
             </div>
-            <div class="perguntaCalcRadio">
+            <!-- <div class="perguntaCalcRadio">
                 <p>Quais os tipos de carnes que a sua empresa transporta?</p>
-                <!-- <div class="radioCalc">
+                <div class="radioCalc">
                     <div>
                         <input type="checkbox" id="input_bovina" value="Bovina">Bovina
                         <label for="input_bovina">Bovina</label>
@@ -38,8 +38,8 @@
                         <input type="checkbox" id="input_aves" value="Aves">
                         <label for="input_aves">Aves</label><br>
                     </div>
-                </div> -->
-            </div>
+                </div>
+            </div> -->
             <div class="perguntaCalc">
                 <p>Em média, quantos carregamentos CADA caminhão da sua empresa executa por dia?</p>
                 <input id="input_carregamentos_dia"><br>
@@ -48,22 +48,8 @@
             <button onclick="calcularPerdas()">Calcular</button>
         </div>
     </div>
-    <div class="resultadoCalc">
-        <div class="cardResultado">
-            <p id="introducao1"></p>
-            <h1 style="color: #1db70f;" id="h1_resultado1"></h1>
-            <p id="descrição1"></p>
-        </div>
-        <div class="cardResultado">
-            <p id="introducao2"></p>
-            <h1 style="color: #d10000;" id="h1_resultado2"></h1>
-            <p id="descrição2"></p>
-        </div>
-        <div class="cardResultado">
-            <p id="introducao3"></p>
-            <h1 style="color: #d10000;" id="h1_resultado3"></h1>
-            <p id="descrição3"></p>
-        </div>
+    <div id="div_resultado">
+        
     </div>
 
 </body>
@@ -71,43 +57,74 @@
 </html>
 
 <script>
-    
+
     function calcularPerdas() {
         var qtd_veiculos = Number(input_qtd_veiculos.value)
+        // Variável sobre a quantidade de caminhões.
         var maxCarga = Number(input_max_carga.value)
+        // Variável sobre a carga máxima em kg dos caminhões.
         var carregamentosDia = Number(input_carregamentos_dia.value)
+        // Variável sobre a quantidade de carregamentos que cada caminhão faz por dia, em média.
 
-        var valorBovinaKG = 30
-        var valorSuinaKG = 20
-        var valorAvesKG = 16
-    
+        var valorBovinaKG = 30 // Valor de Carnes do tipo Bovina.
+        var valorSuinaKG = 20 // Valor de Carnes do tipo Suina.
+        var valorAvesKG = 16 // Valor de Carnes do tipo Aves.
+
         valorCarnes = (valorAvesKG + valorBovinaKG + valorSuinaKG) / 3
-    
+        // Cálculo de média dos valores dos três tipos de carnes -> Bovina, Suína e Aves.
+
         var transportadoPorCarregamento = (maxCarga * valorCarnes)
-    
+        // Cálculo de valor total sendo transportado por carregamento, sendo a multiplicação do valor médio das carnes e a máxima de carga dos caminhões. Individualmente.
+
         var perdasDuranteTransporte = transportadoPorCarregamento * 0.03
-    
+        // Cálculo de valor perdido por carregamento 
+        // "Carregamento" = Uma viagem ou entrega de um único caminhão.
+
         var valorPerdidoMensalmente = (transportadoPorCarregamento * qtd_veiculos) * carregamentosDia
-    
+        // Cálculo do valor perdido mensalmente, sendo o total por carregamento multiplicado pela quantidade de veículos e, depois, este resultado foi multiplicado pela quantidade de carregamentos por dia de cada caminhão.
+
+
+        div_resultado.innerHTML =
+        `
+        <div class="resultadoCalc">
+            <div class="cardResultado">
+                <p id="introducao1"></p>
+                <h1 style="color: #1db70f;" id="h1_resultado1"></h1>
+                <p id="descrição1"></p>
+            </div>
+            <div class="cardResultado">
+                <p id="introducao2"></p>
+                <h1 style="color: #d10000;" id="h1_resultado2"></h1>
+                <p id="descrição2"></p>
+            </div>
+            <div class="cardResultado">
+                <p id="introducao3"></p>
+                <h1 style="color: #d10000;" id="h1_resultado3"></h1>
+                <p id="descrição3"></p>
+            </div>
+        </div>
+        `
+        // Aqui, foi criada toda uma div e suas divs filhas para poder ser mostrada apenas quando o usuário inserir os dados e clicar no botão, através do innerHTML.
+
         introducao1.innerHTML = `Com uma carga média de ${maxCarga}kg por veículo, você terá:`
         h1_resultado1.innerHTML = `R$${transportadoPorCarregamento.toLocaleString('pt-BR')}`
         descrição1.innerHTML = `sendo transportado por carregamento.`
-        // .toLocaleString('pt-BR')
-        // "toLocaleString", é uma parte do protótipo Number, para converter os números para o padrão determinado
-        // - Neste caso, foi utilizado o "pt-BR" denominando o padrão Brasileiro.
+        // // .toLocaleString('pt-BR')
+        // // "toLocaleString", é uma parte do protótipo Number, para converter os números para o padrão determinado
+        // // - Neste caso, foi utilizado o "pt-BR" denominando o padrão Brasileiro.
 
         introducao2.innerHTML = `3% A 8% DE PERDAS DURANTE TRANSPORTE.`
         h1_resultado2.innerHTML = `R$${perdasDuranteTransporte.toLocaleString('pt-BR')}`
         descrição2.innerHTML = `em média será perdido a cada carregamento.`
-        // .toLocaleString('pt-BR')
-        // "toLocaleString", é uma parte do protótipo Number, para converter os números para o padrão determinado
-        // - Neste caso, foi utilizado o "pt-BR" denominando o padrão Brasileiro.
+        // // .toLocaleString('pt-BR')
+        // // "toLocaleString", é uma parte do protótipo Number, para converter os números para o padrão determinado
+        // // - Neste caso, foi utilizado o "pt-BR" denominando o padrão Brasileiro.
 
-        introducao3.innerHTML = `Com ${qtd_veiculos} veículos, mensalmente você terá em média:`
+        introducao3.innerHTML = `Com ${qtd_veiculos} veículos, executando ${carregamentosDia} carregamentos por dia, <br> mensalmente você terá em média:`
         h1_resultado3.innerHTML = `R$${valorPerdidoMensalmente.toLocaleString('pt-BR')}`
         descrição3.innerHTML = `perdido mensalmente.`
-        // .toLocaleString('pt-BR')
-        // "toLocaleString", é uma parte do protótipo Number, para converter os números para o padrão determinado
-        // - Neste caso, foi utilizado o "pt-BR" denominando o padrão Brasileiro.
+        // // .toLocaleString('pt-BR')
+        // // "toLocaleString", é uma parte do protótipo Number, para converter os números para o padrão determinado
+        // // - Neste caso, foi utilizado o "pt-BR" denominando o padrão Brasileiro.
     }
 </script>

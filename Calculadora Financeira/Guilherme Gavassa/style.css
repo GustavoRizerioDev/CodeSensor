@@ -27,9 +27,11 @@ body {
     margin-top: 30px;
     margin-bottom: 30px;
 
-    width: 440px;
+    width: 30%;
     height: 830px;
     gap: 50px;
+
+    
 }
 
 /* .tituloCalc {
@@ -50,7 +52,7 @@ body {
     flex-direction: column;
     align-items: center;
     
-    
+    width: 80%;
 
     margin-top: 30px;
 }
@@ -101,8 +103,6 @@ body {
 
     background-color: #FFF;
     color: #000;
-
-    transition: ease-in-out 0.2s;
 }
 
 .inputsCalc button:hover{
@@ -112,7 +112,6 @@ body {
 
     cursor: pointer;    
 }
-
 .resultadoCalc {
     background-color: #FFDBDB;
     border-left: 25px solid #FFAAAA;
@@ -124,8 +123,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    
 }
 
 .cardResultado{
@@ -133,8 +130,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    
-    border-radius: 10px;
+    border: #000 1px solid;
 
     width: 70%;
     height: 200px;
@@ -143,3 +139,4 @@ body {
 
     margin: 20px;
 }
+
