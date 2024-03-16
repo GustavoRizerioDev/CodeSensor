@@ -131,6 +131,7 @@ body {
     align-items: center;
     justify-content: space-evenly;
     border: #000 1px solid;
+    text-align: center;
 
     width: 70%;
     height: 200px;
