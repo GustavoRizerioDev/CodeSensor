@@ -94,7 +94,7 @@
         // Cálculo do valor perdido mensalmente, sendo o total por carregamento multiplicado pela quantidade de veículos e, depois, este resultado foi multiplicado pela quantidade de carregamentos por dia de cada caminhão.
 
         var diminuicaoPerdas = ((transportadoPorCarregamento * 0.03) * qtd_veiculos) * carregamentosDia
-        // Cálculo de perdas diminuindo 5% com a utilização da nossa solução.
+        // Cálculo de perdas diminuindo 5% do total, com a utilização da nossa solução.
 
         div_resultado.innerHTML =
             `
@@ -130,7 +130,7 @@
         // "toLocaleString", é uma parte do protótipo Number, para converter os números para o padrão determinado
         // - Neste caso, foi utilizado o "pt-BR" denominando o padrão Brasileiro.
 
-        introducao2.innerHTML = `3% A 8% DE PERDAS DURANTE TRANSPORTE.`
+        introducao2.innerHTML = `*APROXIMADAMENTE 8% DE PERDAS DURANTE TRANSPORTE.`
         h1_resultado2.innerHTML = `R$${perdasDuranteTransporte.toLocaleString('pt-BR')}`
         descrição2.innerHTML = `em média será perdido a cada carregamento.`
         
@@ -140,9 +140,8 @@
         descrição3.innerHTML = `perdido mensalmente.`
         
 
-        introducao4.innerHTML = `Com a utilização da nossa solução, <br> você terá uma diminuição de 5% de perda, com isso, as suas perdas totais serão de: `
+        introducao4.innerHTML = `Com a utilização da nossa solução, <br> você terá apenas 3% de perdas de seu valor total por carregamento, resultando em apenas`
         h1_resultado4.innerHTML = `R$${diminuicaoPerdas.toLocaleString('pt-BR')}`
-        descrição4.innerHTML = `mensalmente, um valor menor do que anteriormente.`
-        
+        descrição4.innerHTML = `perdidos mensalmente, um valor menor do que anteriormente.`
     }
 </script>
