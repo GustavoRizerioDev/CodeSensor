@@ -4,7 +4,7 @@ body {
 
 .tudo2 {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
 }
 
 .title {
@@ -12,7 +12,7 @@ body {
     text-align: left;
     margin-left: 30%;
     color: rgb(110, 0, 0);
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 .box {
