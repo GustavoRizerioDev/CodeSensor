@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="card_div_center">
+        <div class="card_div_block">
+            <div class="text_inside">
+                <h1>CodeSensor</h1>
+                <h2>Calculadora Financeira - Transporte de Carnes</h2>
+                <h6 style="font-style: italic;">"Levando em consideração uma perda estimada de 4% no carregamento de
+                    Carnes (Bovina,Suina e Aves) durante o transporte."</h6>
+                <div>
+
+                    Insira quantos kg's de carne podem ser carregados dentro de <span
+                        style="font-weight: bold">UM</span> caminhão da sua frota:
+                    <br>
+                    <input type="text" placeholder="Digite algo aqui..." id="input_carregados">
+
+                    <br>
+                    <br>
+
+                    Insira quantas transportes são feitos no mês pelo os caminhões:
+                    <br>
+                    <input type="text" placeholder="Digite algo aqui..." id="input_transportes">
+
+                    <br>
+                    <br>
+
+                    Insira o preço médio do kg da carne transportada em Reais:
+                    <br>
+                    <input type="text" placeholder="Digite algo aqui..." id="input_mediaCarne">
+
+
+                    <br>
+                    <br>
+
+                    <button onclick="calcularGasto()">Analisar meu caso</button>
+
+
+                    <div id="div_resultadoCalc"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    function calcularGasto() {
+        var Carregados = Number(input_carregados.value)
+        var Transportes = Number(input_transportes.value)
+        var Media = Number(input_mediaCarne.value)
+
+        var TotalCaminhao = Carregados * Media
+        var perdas = TotalCaminhao * 0.04
+        var perdasMes = perdas * Transportes
+        var qtdCarne = (Carregados * Transportes) * 0.04
+        var TotalVendidoMês = TotalCaminhao * Transportes
+
+
+        div_resultadoCalc.innerHTML = `<br>
+            <p class = 'cardinnerHTML'>Você transporta cerca de <span style = 'color: green'>R$${TotalCaminhao}</span> por caminhão OU <span style = 'color: green'>R$${TotalVendidoMês}</span> por mês com todos os transportes feitos.
+                <br>
+                <br>
+                Você perde <span style = 'color: red'>R$${perdas}</span> por carregamento e em um mês você perde <span style = 'color: red'>R$${perdasMes}</span>, o equivalente a <span style = 'color: red'>${qtdCarne}kg's</span> de carne desperdiçada durante a cadeia de transporte.</p>
+            </p>`
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+</script>

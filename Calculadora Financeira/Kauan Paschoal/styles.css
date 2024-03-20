@@ -1,0 +1,67 @@
+.card_div_block {
+    border-radius: 15px;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(243, 71, 71);
+    margin: 30px;
+    box-shadow: 30px 30px 10px #bebebe,
+        -30px -30px 10px #ffffff;
+}
+
+.card_div_center {
+    display: flex;
+    justify-content: center;
+}
+
+.text_inside {
+    font-family: Montserrat;
+    text-align: center;
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+/* Estilizando o input */
+.text_inside input[type="text"] {
+    width: 50%;
+    /* Largura do input */
+    padding: 10px;
+    /* Espaçamento interno */
+    margin-top: 10px;
+    /* Espaçamento acima do input */
+    border-radius: 25px;
+    /* Borda arredondada */
+    border: 2px solid #ccc;
+    /* Borda sólida */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    font-style: italic;
+    box-sizing: border-box;
+    /* Incluir o padding e a borda na largura total do input */
+}
+
+.text_inside button {
+    width: 130px;
+    height: 30px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 25px;
+
+
+
+}
+
+button:hover {
+    width: 150px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.cardinnerHTML {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 25px;
+    padding: 10px;
+    background-color: gainsboro;
+    font-weight: bold;
+    font-style: italic;
+}
