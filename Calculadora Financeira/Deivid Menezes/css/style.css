@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+
+#container {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    margin-left: 60px;
+    margin-right: 60px;
+    background-color: #DBDADA;
+    flex-wrap: wrap;
+}
+
+#calc_financeira {
+    width: 50vh;
+    height: 90vh;
+    background-color: #EC4D4D;
+    border-radius: 10px;
+    margin: 40px;   
+}
+
+.texto_titulo {
+    text-align: center;
+}
+
+.caixa_texto{
+    margin: 50px;
+}
+
+.caixas_texto{
+    padding: 10px;
+}
+
+input {
+    font-family: Poppins;
+    border-radius: 6px;
+    border-width: 0;
+}
+
+::-webkit-input-placeholder {
+    color: #b9b9b9;
+}
+
+
+
+#qtd_Sensores,
+#carga_caminhao,
+#preco_Carne,
+#kg_carne {
+    padding: 8px;
+    
+}
+
+/* #tipo_carne{
+    margin-top: 5px;
+} */
+
+.container {
+    display: flex;
+}
+
+.textos_Label {
+    display: block;
+    margin-bottom: 2px;
+    margin-top: 18px;
+}
+
+.container_button {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.button_financiar {
+    width: 140px;
+    height: 50px;
+    font-family: 'Poppins';
+    background-color: white;
+    border-width: 0;
+    border-radius: 6px;
+    color: red;
+    transition: 0.5s;
+}
+
+.button_financiar:hover {
+    background-color: #000;
+    color:white;
+}
+
+.dados_financeamento{
+    width: 50%;
+    height: 50%;
+    align-self: start;
+    margin-top: 46px;
+    margin-left: 30px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.dados_financeamento h3 {
+    text-align: center;
+}
+
+.texto_guia {
+    text-align: center;
+}
+
+
+#dadosTransporte {
+    padding: 10px;
+}

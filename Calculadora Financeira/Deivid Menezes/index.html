@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="calc_financeira">
+            <h3 class="texto_titulo">Calculadora Financeira:</h3>
+            <div class="caixas_texto">
+                <label for="campo" class="textos_Label">Capacidade de Carga do Caminhão:</label>
+                <input type="text" id="carga_caminhao" placeholder="Capacidade">
+
+                <label for="campo" class="textos_Label">Tipo de Carne:</label>
+                <input name="carne" type="radio" id="tipo_carne" value="Aves"><label for="tipo_carne">Aves</label>
+                <input name="carne" type="radio" id="tipo_carne" value="Bovinas"><label for="tipo_carne">Bovinas</label>
+                <input name="carne" type="radio" id="tipo_carne" value="Suinas"><label for="tipo_carne">Suinas</label>
+
+                <label for="campo" class="textos_Label">Quantos Kgs será transportado:</label>
+                <input type="text" id="kg_carne" placeholder="Kg de Carne">
+
+                <label for="campo" class="textos_Label">Preço da Carne por Kg</label>
+                <input type="texto" name="" id="preco_Carne" placeholder="Preço da carne">
+
+                <div class="container_button">
+                    <button class="button_financiar" onclick="mensurarPerdas()">Mensurar Perdas</button>
+                </div>
+            </div>
+        </div>
+        <div class="dados_financeamento">
+            <h3>Mensurando Perdas:</h3>
+            <div class="texto_guia">Perdas referentes ao Negocio:</div>
+            <div id="dadosTransporte"></div>
+        </div>
+        <div></div>
+    </div>
+</body>
+
+</html>
+
+<script src="./js/main.js"></script>
