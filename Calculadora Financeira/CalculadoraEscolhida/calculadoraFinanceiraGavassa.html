@@ -17,15 +17,15 @@
         <div class="inputsCalc">
             <div class="perguntaCalc">
                 <p>Quantos veículos de transporte de carga você possui em sua empresa?</p>
-                <input id="input_qtd_veiculos"><br>
+                <input id="input_qtd_veiculos" placeholder="Ex: 15"><br>
             </div>
             <div class="perguntaCalc">
                 <p>Em média, qual é a carga máxima de seus veículos durante o transporte? (Em kg)</p>
-                <input id="input_max_carga"><br>
+                <input id="input_max_carga" placeholder="Ex: 10000"><br>
             </div>
             <div class="perguntaCalc">
                 <p>Em média, quantos carregamentos CADA caminhão da sua empresa executa por dia?</p>
-                <input id="input_carregamentos_dia"><br>
+                <input id="input_carregamentos_dia" placeholder="Ex: 4"><br>
             </div>
 
             <button onclick="calcularPerdas()">Calcular</button>
@@ -100,7 +100,7 @@
         // "toLocaleString", é uma parte do protótipo Number, para converter os números para o padrão determinado
         // - Neste caso, foi utilizado o "pt-BR" denominando o padrão Brasileiro.
 
-        introducao2.innerHTML = `*APROXIMADAMENTE 8% DE PERDAS DURANTE TRANSPORTE.`
+        introducao2.innerHTML = `Aproximadamente 8% de perdas durante transportes.`
         h1_resultado2.innerHTML = `R$${perdasDuranteTransporte.toLocaleString('pt-BR')}`
         descrição2.innerHTML = `em média será perdido a cada carregamento.`
         

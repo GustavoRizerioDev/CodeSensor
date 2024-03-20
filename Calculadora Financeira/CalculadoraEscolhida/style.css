@@ -121,6 +121,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+   
 }
 .resultadoCalc {
     background-color: #FFDBDB;
@@ -128,6 +129,7 @@ body {
 
     width: 820px;
     height: 645px;
+    margin-right: 10px;
 
     display: flex;
     flex-direction: column;
