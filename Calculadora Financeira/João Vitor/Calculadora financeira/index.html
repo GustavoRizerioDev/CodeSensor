@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira</title>
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body>
+    <p></p>
+    <div class="container">
+        <h1>Calculadora Financeira</h1>
+        <div class="section">
+
+            <div class="calc_financeira">
+                <h2> Carga maxíma por caminhão</h2>
+                <input type="number" class="cargaMax" name="" id="input_carga_maxima">
+                <h2 class="titulo_veiculos">Quantidade de Veiculos</h2>
+                <input type="number" class="veiculos" id="input_quantidade_veiculos">
+                <h2>Quantidade de Carregamentos /Dia</h2>
+                <input type="number" class="carregamentos" id="input_quantidade_carregamentos">
+                <!-- <h2>Tipo do produto</h2> -->
+                <!-- <div class="container-radio">
+                    <div>
+                        <input name="carne" class="radio" type="radio"><br>
+                        <label for=""> Bovino</label>
+                    </div>
+                    <div>
+                        <input name="carne" type="radio"><br>
+                        <label for=""> Suíno</label>
+                    </div>
+                    <div>
+                        <input name="carne" type="radio"><br>
+                        <label for=""> Aves</label>
+                    </div>
+                </div> -->
+                <p></p>
+                <button onclick="calcularPerdas()" class="calcular">Calcular</button>
+            </div>
+            <div class="calc_resultado" id="div_resultado">
+                
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="calc.js"></script>

@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    background-color: #0b001a;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 10%;
+}
+
+.calc_financeira {
+    color: black;
+    width: 500px;
+    height: 500px;
+    border-radius: 8px;
+    background-image: linear-gradient(to right, #004aad, #cb6ce6);
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+}
+
+.calc_financeira h2 {
+
+    color: black;
+    text-align: center;
+}
+
+.section {
+    display: flex;
+    gap: 200px;
+    height: 300px;
+}
+
+.calc_resultado {
+    color: black;
+    background-color: #0b001a;
+    width: 500px;
+    height: 500px;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+}
+
+.veiculos {
+    border-radius: 6px;
+}
+
+.carregamentos {
+    border-radius: 6px;
+}
+
+.cargaMax {
+    border-radius: 6px;
+}
+
+
+/* label {
+    font-family: Arial, Helvetica, sans-serif;
+} */
+
+.calcular {
+    background-color: #9D3BAD;
+    border-radius: 20px;
+    font-family: sans-serif;
+    color: white;
+    border-color: white;
+    margin-top: 0;
+    border: solid 2px black;
+}
+
+button:hover {
+    background-color: #5e1096;
+
+}
+
+/* .container-radio {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+} */
+
+.informacao1 {
+    display: flex;
+    border: solid bisque;
+    border-radius: 8px;
+    background-color: bisque;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.informacao2 {
+    display: flex;
+    border: solid bisque;
+    border-radius: 8px;
+    background-color: bisque;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.informacao3 {
+    display: flex;
+    border: solid bisque;
+    border-radius: 8px  ;
+    background-color: bisque;
+    justify-content: center;
+    flex-direction: column;
+}
