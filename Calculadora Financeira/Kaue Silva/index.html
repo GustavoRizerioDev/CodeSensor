@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="formulario">
+            <h1 id="titulo">Simulador Financeiro</h1>
+            <h2 id="subtitulo">Simule aqui suas perdas anuais e visualize os benefícios que nossa ferramenta oferece.</h2>
+            <p>Quantidade de caminhões que saem para transporte de carnes em média mensalmente</p>
+            <input type="number" name="input_qtdCaminhoesTransporte" id="input_qtdCaminhoesTransporte">
+            <p>Quantidade de transportes mensais que um caminhão faz em média</p>
+            <input type="number" name="input_qtdTransportes" id="input_qtdTransportes">
+            <p>Quantia média de carnes por carregamento (KG)</p>
+            <input type="number" name="input_qtdCarnes" id="input_qtdCarnes">
+            <p>Escolha um tipo de carne que deseja simular o valor de perda (bovina, suina ou ave)</p>
+            <input type="text" name="input_tipoCarne" id="input_tipoCarne">
+            <button id="botao" onclick="calcularFinancas()">Calcular Perdas</button>
+        </div>
+
+        <div id="resultado"></div>
+
+    </div>
+</body>
+
+</html>
