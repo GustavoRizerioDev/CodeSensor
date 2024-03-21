@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora Financeira - CodeSensor</title>
+</head>
+
+<body>
+    <div class="calculadora">
+        <div class="tituloCalc">
+            <h1>Calculadora Financeira</h1>
+            <p>Entenda o porquê de nossa solução ser NECESSÁRIA para o seu negócio!</p>
+        </div>
+        <div class="inputsCalc">
+            <div class="perguntaCalc">
+                <p>Quantidade da Frota de Caminhões:</p>
+                <input id="input_qtd_veiculos" placeholder="Ex: 15"><br>
+            </div>
+            <div class="perguntaCalc">
+                <p>Em média, qual é a carga máxima durante o transporte? (Em kg)</p>
+                <input id="input_max_carga" placeholder="Ex: 10000"><br>
+            </div>
+            <div class="perguntaCalc">
+                <p>Em média, quantos carregamentos CADA caminhão executa diariamente?</p>
+                <input id="input_carregamentos_dia" placeholder="Ex: 4"><br>
+                
+            </div>
+            
+            <button onclick="calcularPerdas()">Calcular</button>
+        </div>
+    </div>
+    <div id="div_resultado">
+        
+
+
+</body>
+
+</html>
+
+<script>
+
+    function calcularPerdas() {
+        var qtd_veiculos = Number(input_qtd_veiculos.value)
+        var maxCarga = Number(input_max_carga.value)
+        var carregamentosDia = Number(input_carregamentos_dia.value)   
+
+        var valorBovinaKG = 30
+        var valorSuinaKG = 20
+        var valorAvesKG = 16
+
+        var valorCarnes = (valorAvesKG + valorBovinaKG + valorSuinaKG) / 3
+
+        var transportadoPorCarregamento = (maxCarga * valorCarnes)
+
+        var perdasDuranteTransporte = transportadoPorCarregamento * 0.08
+        
+        var valorPerdidoMensalmente = (perdasDuranteTransporte * qtd_veiculos) * (carregamentosDia * 30)
+        
+        var diminuicaoPerdas = valorPerdidoMensalmente * 0.40
+        
+        div_resultado.innerHTML =
+            `
+            <div class="resultadoCalc">
+             <div class="cardResultado">
+                    <p id="p_introducao1"></p>
+                    <h1 style="color: #1db70f;" id="h1_resultado1"></h1>
+                    <p id="p_descrição1"></p>
+                </div>
+                <div class="cardResultado">
+                    <p id="p_introducao2"></p>
+                    <h1 style="color: #d10000;" id="h1_resultado2"></h1>
+                    <p id="p_descrição2"></p>
+                </div>
+                <div class="cardResultado">
+                    <p id="p_introducao3"></p>
+                    <h1 style="color: #d10000;" id="h1_resultado3"></h1>
+                    <p id="p_descrição3"></p>
+                </div>
+                <div class="cardResultado">
+                    <p id="p_introducao4"></p>
+                    <h1 style="color: #1db70f;" id="h1_resultado4"></h1>
+                    <p id="p_descrição4"></p>
+                </div>
+            </div>
+            `
+        
+        p_introducao1.innerHTML = `Com uma carga média de ${maxCarga}kg por veículo, você terá:`
+        h1_resultado1.innerHTML = `R$${transportadoPorCarregamento.toLocaleString('pt-BR')}`
+        p_descrição1.innerHTML = `sendo transportado por carregamento.`
+        
+        p_introducao2.innerHTML = `De acordo com a nossa equipe em média é estimado <b>8% de perdas</b> durante transporte.`
+        h1_resultado2.innerHTML = `R$${perdasDuranteTransporte.toLocaleString('pt-BR')}`
+        p_descrição2.innerHTML = `em média será perdido a cada carregamento.`
+        
+
+        p_introducao3.innerHTML = `Com ${qtd_veiculos} veículos, executando ${carregamentosDia} carregamentos <b>por dia</b>, <br> você terá em média:`
+        h1_resultado3.innerHTML = `R$${valorPerdidoMensalmente.toLocaleString('pt-BR')}`
+        p_descrição3.innerHTML = `perdidos mensalmente.`
+        
+
+        p_introducao4.innerHTML = `Com a solução, 
+        você <b>diminuirá em até 60% suas perdas</b>,<br> resultando em apenas`
+        h1_resultado4.innerHTML = `R$${diminuicaoPerdas.toLocaleString('pt-BR')}`
+        p_descrição4.innerHTML = `perdidos mensalmente, um valor menor do que o anterior.`
+    }
+
+
+</script>

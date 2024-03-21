@@ -24,27 +24,28 @@ body {
     background-color: #A40101;
     color: white;
 
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin: 10px 0px 0px 10px;
 
-    width: 30%;
-    height: 830px;
-    gap: 50px;
-
-    
+    width: 40%;
+    height: 100%;
+    gap: 30px;
+    padding: 30px;
 }
 
-/* .tituloCalc {
+.tituloCalc {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    margin-top: 30px;
-    margin-left: 50px;
-    margin-right: 50px;
+    text-align: center;
     
-} */
+}
+
+.tituloCalc p{
+    font-size: 20px;
+
+    width: 80%;
+}
 
 
 .inputsCalc {
@@ -52,18 +53,24 @@ body {
     flex-direction: column;
     align-items: center;
     
-    width: 80%;
-
+    
+    width: 100%;
     margin-top: 30px;
 }
 
 .perguntaCalc {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    align-items: flex-start ;
+    width: 80%;
+    
+
+    margin-left: 50px;
+    margin-right: 50px;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+
+    
 
     gap: 10px;
 }
@@ -71,10 +78,13 @@ body {
 .perguntaCalc input {
     height: 30px;
     width: 100%;
-    
     padding: 5px;
 
     border-bottom: 3px solid #BFBFBF;
+}
+
+.perguntaCalc p{
+    font-size: 18px;
 }
 
 /* .perguntaCalcRadio {
@@ -96,7 +106,7 @@ body {
 .inputsCalc button{
     width: 50%;
     height: 40px;
-    margin-top: 20%;
+    margin-top: 15%;
 
     font-weight: bold;
     text-transform: uppercase;
@@ -112,12 +122,20 @@ body {
 
     cursor: pointer;    
 }
+
+.div_resultado{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+   
+}
 .resultadoCalc {
     background-color: #FFDBDB;
     border-left: 25px solid #FFAAAA;
 
     width: 820px;
-    height: 745px;
+    height: 645px;
+    margin-right: 10px;
 
     display: flex;
     flex-direction: column;

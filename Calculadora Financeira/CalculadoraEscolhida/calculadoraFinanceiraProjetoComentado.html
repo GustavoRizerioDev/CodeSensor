@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora Financeira - CodeSensor</title>
+</head>
+
+<body>
+    <div class="calculadora">
+        <div class="tituloCalc">
+            <h1>Calculadora Financeira</h1>
+            <p>Entenda o porquê de nossa solução ser NECESSÁRIA para o seu negócio!</p>
+        </div>
+        <div class="inputsCalc">
+            <div class="perguntaCalc">
+                <p>Quantos veículos de transporte de carga você possui em sua empresa?</p>
+                <input id="input_qtd_veiculos" placeholder="Ex: 15"><br>
+            </div>
+            <div class="perguntaCalc">
+                <p>Em média, qual é a carga máxima de seus veículos durante o transporte? (Em kg)</p>
+                <input id="input_max_carga" placeholder="Ex: 10000"><br>
+            </div>
+            <div class="perguntaCalc">
+                <p>Em média, quantos carregamentos CADA caminhão da sua empresa executa por dia?</p>
+                <input id="input_carregamentos_dia" placeholder="Ex: 4"><br>
+            </div>
+
+            <button onclick="calcularPerdas()">Calcular</button>
+        </div>
+    </div>
+    <div id="div_resultado">
+
+
+</body>
+
+</html>
+
+<script>
+
+    function calcularPerdas() {
+        var qtd_veiculos = Number(input_qtd_veiculos.value)
+        var maxCarga = Number(input_max_carga.value)
+        var carregamentosDia = Number(input_carregamentos_dia.value)
+        // Criação de variáveis sobre os inputs inseridos.
+
+        var valorBovinaKG = 30 // Valor de Carnes do tipo Bovina.
+        var valorSuinaKG = 20 // Valor de Carnes do tipo Suina.
+        var valorAvesKG = 16 // Valor de Carnes do tipo Aves.
+
+        valorCarnes = (valorAvesKG + valorBovinaKG + valorSuinaKG) / 3
+        // Cálculo de média dos valores dos três tipos de carnes -> Bovina, Suína e Aves.
+
+        var transportadoPorCarregamento = (maxCarga * valorCarnes)
+        // Cálculo de valor total sendo transportado por carregamento, sendo a multiplicação do valor médio das carnes e a máxima de carga dos caminhões. Individualmente.
+
+        var perdasDuranteTransporte = transportadoPorCarregamento * 0.08
+        // Cálculo de valor perdido por carregamento 
+        // "Carregamento" = Uma viagem ou entrega de um único caminhão.
+
+        var valorPerdidoMensalmente = (perdasDuranteTransporte * qtd_veiculos) * (carregamentosDia *30)
+        // Cálculo do valor perdido mensalmente, sendo o total por carregamento multiplicado pela quantidade de veículos e, depois, este resultado foi multiplicado pela quantidade de carregamentos por dia de cada caminhão.
+
+        var diminuicaoPerdas = (perdasDuranteTransporte * qtd_veiculos) * (carregamentosDia *30) * 0.40
+        // Cálculo de perdas diminuindo 60% de perdas, com a utilização da nossa solução.
+
+        div_resultado.innerHTML =
+            `
+            <div class="resultadoCalc">
+             <div class="cardResultado">
+                  <p id="introducao1"></p>
+                 <h1 style="color: #1db70f;" id="h1_resultado1"></h1>
+                 <p id="descrição1"></p>
+                </div>
+                <div class="cardResultado">
+                    <p id="introducao2"></p>
+                   <h1 style="color: #d10000;" id="h1_resultado2"></h1>
+                   <p id="descrição2"></p>
+                </div>
+                <div class="cardResultado">
+                    <p id="introducao3"></p>
+                    <h1 style="color: #d10000;" id="h1_resultado3"></h1>
+                    <p id="descrição3"></p>
+                </div>
+                <div class="cardResultado">
+                    <p id="introducao4"></p>
+                    <h1 style="color: #1db70f;" id="h1_resultado4"></h1>
+                    <p id="descrição4"></p>
+                </div>
+            </div>
+            `
+        // Aqui, foi criada toda uma div e suas divs filhas para poder ser mostrada apenas quando o usuário inserir os dados e clicar no botão, através do innerHTML.
+
+        introducao1.innerHTML = `Com uma carga média de ${maxCarga}kg por veículo, você terá:`
+        h1_resultado1.innerHTML = `R$${transportadoPorCarregamento.toLocaleString('pt-BR')}`
+        descrição1.innerHTML = `sendo transportado por carregamento.`
+        // .toLocaleString('pt-BR')
+        // "toLocaleString", é uma parte do protótipo Number, para converter os números para o padrão determinado
+        // - Neste caso, foi utilizado o "pt-BR" denominando o padrão Brasileiro.
+
+        introducao2.innerHTML = `De acordo com o 
+        EMBRAPA
+        , aproximadamente há <b>8% de perdas</b> durante transporte. `
+        h1_resultado2.innerHTML = `R$${perdasDuranteTransporte.toLocaleString('pt-BR')}`
+        descrição2.innerHTML = `em média será perdido a cada carregamento.`
+        
+
+        introducao3.innerHTML = `Com ${qtd_veiculos} veículos, executando ${carregamentosDia} carregamentos por dia, <br> mensalmente você terá em média:`
+        h1_resultado3.innerHTML = `R$${valorPerdidoMensalmente.toLocaleString('pt-BR')}`
+        descrição3.innerHTML = `perdido mensalmente.`
+        
+
+        introducao4.innerHTML = `Com a nossa solução, <br> 
+        você terá uma <b>diminuição de 60% das suas perdas</b>, resultando em apenas`
+        h1_resultado4.innerHTML = `R$${diminuicaoPerdas.toLocaleString('pt-BR')}`
+        descrição4.innerHTML = `perdidos mensalmente, um valor menor do que anteriormente.`
+    }
+</script>
