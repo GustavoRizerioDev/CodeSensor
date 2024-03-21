@@ -15,5 +15,3 @@ Nosso projeto gira em torno da conservação e refrigeração de carnes no trans
 - [@Kauê de Oliveira](https://github.com/KaSilvaDev)
 - [@Lucas Oliveira](https://github.com/lucasomsilva)
 - [@João Vitor](https://github.com/JoaoV004)
-
-s
