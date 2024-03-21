@@ -16,22 +16,24 @@
         </div>
         <div class="inputsCalc">
             <div class="perguntaCalc">
-                <p>Quantos veículos de transporte de carga você possui em sua empresa?</p>
+                <p>Quantidade da Frota de Caminhões:</p>
                 <input id="input_qtd_veiculos" placeholder="Ex: 15"><br>
             </div>
             <div class="perguntaCalc">
-                <p>Em média, qual é a carga máxima de seus veículos durante o transporte? (Em kg)</p>
+                <p>Em média, qual é a carga máxima durante o transporte? (Em kg)</p>
                 <input id="input_max_carga" placeholder="Ex: 10000"><br>
             </div>
             <div class="perguntaCalc">
-                <p>Em média, quantos carregamentos CADA caminhão da sua empresa executa por dia?</p>
+                <p>Em média, quantos carregamentos CADA caminhão executa diariamente?</p>
                 <input id="input_carregamentos_dia" placeholder="Ex: 4"><br>
+                
             </div>
-
+            
             <button onclick="calcularPerdas()">Calcular</button>
         </div>
     </div>
     <div id="div_resultado">
+        
 
 
 </body>
@@ -43,69 +45,69 @@
     function calcularPerdas() {
         var qtd_veiculos = Number(input_qtd_veiculos.value)
         var maxCarga = Number(input_max_carga.value)
-        var carregamentosDia = Number(input_carregamentos_dia.value)
-        
+        var carregamentosDia = Number(input_carregamentos_dia.value)   
 
         var valorBovinaKG = 30
         var valorSuinaKG = 20
         var valorAvesKG = 16
 
-        valorCarnes = (valorAvesKG + valorBovinaKG + valorSuinaKG) / 3
-        
+        var valorCarnes = (valorAvesKG + valorBovinaKG + valorSuinaKG) / 3
 
         var transportadoPorCarregamento = (maxCarga * valorCarnes)
 
         var perdasDuranteTransporte = transportadoPorCarregamento * 0.08
         
-        var valorPerdidoMensalmente = (perdasDuranteTransporte * qtd_veiculos) * (carregamentosDia *30)
+        var valorPerdidoMensalmente = (perdasDuranteTransporte * qtd_veiculos) * (carregamentosDia * 30)
         
-        var diminuicaoPerdas = (perdasDuranteTransporte * qtd_veiculos) * (carregamentosDia *30) * 0.40
+        var diminuicaoPerdas = valorPerdidoMensalmente * 0.40
         
         div_resultado.innerHTML =
             `
             <div class="resultadoCalc">
              <div class="cardResultado">
-                  <p id="introducao1"></p>
-                 <h1 style="color: #1db70f;" id="h1_resultado1"></h1>
-                 <p id="descrição1"></p>
+                    <p id="p_introducao1"></p>
+                    <h1 style="color: #1db70f;" id="h1_resultado1"></h1>
+                    <p id="p_descrição1"></p>
                 </div>
                 <div class="cardResultado">
-                    <p id="introducao2"></p>
-                   <h1 style="color: #d10000;" id="h1_resultado2"></h1>
-                   <p id="descrição2"></p>
+                    <p id="p_introducao2"></p>
+                    <h1 style="color: #d10000;" id="h1_resultado2"></h1>
+                    <p id="p_descrição2"></p>
                 </div>
                 <div class="cardResultado">
-                    <p id="introducao3"></p>
+                    <p id="p_introducao3"></p>
                     <h1 style="color: #d10000;" id="h1_resultado3"></h1>
-                    <p id="descrição3"></p>
+                    <p id="p_descrição3"></p>
                 </div>
                 <div class="cardResultado">
-                    <p id="introducao4"></p>
+                    <p id="p_introducao4"></p>
                     <h1 style="color: #1db70f;" id="h1_resultado4"></h1>
-                    <p id="descrição4"></p>
+                    <p id="p_descrição4"></p>
                 </div>
             </div>
             `
         
-        introducao1.innerHTML = `Com uma carga média de ${maxCarga}kg por veículo, você terá:`
+        p_introducao1.innerHTML = `Com uma carga média de ${maxCarga}kg por veículo, você terá:`
         h1_resultado1.innerHTML = `R$${transportadoPorCarregamento.toLocaleString('pt-BR')}`
-        descrição1.innerHTML = `sendo transportado por carregamento.`
+        p_descrição1.innerHTML = `sendo transportado por carregamento.`
         
-        introducao2.innerHTML = `De acordo com o 
-        EMBRAPA
+        p_introducao2.innerHTML = `De acordo com o 
+        <a style="text-decoration: none; color: red;" href="https://www.instagram.com/on.gavassa/" target="_blank">EMBRAPA</a>
         , aproximadamente há <b>8% de perdas</b> durante transporte. `
         h1_resultado2.innerHTML = `R$${perdasDuranteTransporte.toLocaleString('pt-BR')}`
-        descrição2.innerHTML = `em média será perdido a cada carregamento.`
+        p_descrição2.innerHTML = `em média será perdido a cada carregamento.`
         
 
-        introducao3.innerHTML = `Com ${qtd_veiculos} veículos, executando ${carregamentosDia} carregamentos por dia, <br> mensalmente você terá em média:`
+        p_introducao3.innerHTML = `Com ${qtd_veiculos} veículos, executando ${carregamentosDia} carregamentos <b>por dia</b>, <br> você terá em média:`
         h1_resultado3.innerHTML = `R$${valorPerdidoMensalmente.toLocaleString('pt-BR')}`
-        descrição3.innerHTML = `perdido mensalmente.`
+        p_descrição3.innerHTML = `perdidos mensalmente.`
         
 
-        introducao4.innerHTML = `Com a nossa solução, <br> 
-        você terá uma <b>diminuição de 60% das suas perdas</b>, resultando em apenas`
+        p_introducao4.innerHTML = `Com a solução, 
+        você <b>diminuirá em até 60% suas perdas</b>,<br> resultando em apenas`
         h1_resultado4.innerHTML = `R$${diminuicaoPerdas.toLocaleString('pt-BR')}`
-        descrição4.innerHTML = `perdidos mensalmente, um valor menor do que anteriormente.`
+        p_descrição4.innerHTML = `perdidos mensalmente, um valor menor do que o anterior.`
     }
+
+
 </script>
