@@ -27,7 +27,7 @@ void setup() {
 void loop() {
   valorLido = analogRead(pinoSensor);
   temperatura = (valorLido * 0.00488); //Essa linha vai fazer o Calculo de 5V - 1024 bits.
-  temperatura = temperatura * (-4);
+  temperatura = temperatura * (-6);
     // linha++;
     // Serial.print("DATA, TIME, ");
     // Serial.println(temperatura);
@@ -45,7 +45,7 @@ void loop() {
     String minUmidade = "Minimo:";
     String maxUmidade = "Maximo:";
       //Serial.print("Umidade: ");
-      umidade = umidade * 1.50;
+      umidade = umidade * 1.5;
       
     Serial.print(teste + umidade);
     Serial.print(" , ");
