@@ -26,7 +26,7 @@ void loop() {
     Serial.println("Erro ao ler"); 
   } else {
       
-      umidade = umidade * 1.75;
+      umidade = umidade * 1.76;
       
     Serial.print(umidade);
     Serial.print(" , ");
