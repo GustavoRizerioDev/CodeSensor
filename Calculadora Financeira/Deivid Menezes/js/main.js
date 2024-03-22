@@ -10,10 +10,13 @@ function mensurarPerdas() {
     var valorCarneUnidade = kgCarne * precoCarne;
 
     var transportarCarne = 0;
+    var percaTransporte = 0;
+    var solucaoProduto = 0;
 
     if (capacidadeCarga >= 1000) {
         transportarCarne = valorCarneUnidade;
-        var percaTransporte = (transportarCarne * 0.08) 
+        percaTransporte = transportarCarne * 0.08 
+        solucaoProduto = transportarCarne * 0.03
         dadosTransporte.innerHTML = `
             Você Fez o Transporte de ${tipoCarne}.
             <br>
@@ -31,6 +34,9 @@ function mensurarPerdas() {
             <br>
             <br>
             <b style="color:red;">Você tem Perdido ${percaTransporte.toFixed(2)} por Transporte ou 8% do Gasto com Transporte.</b> 
+            <br>
+            <br>
+            <span style="color:green;">Ao Usar nossa Solucão você ira diminuir essa porcentagem de perca em <b>60%</b>, O Valor passará a ser <b>${solucaoProduto}</b></span>
         `
     } else {
         dadosTransporte.innerHTML = `
