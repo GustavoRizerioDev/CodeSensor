@@ -26,7 +26,7 @@
     
     create table veiculo ( 
 	 id int primary key auto_increment,
-	 placa varchar(7) not null,  
+	 placa char(7) not null,  
 	 situacao varchar(20) not null ,
 	 
 	 check(situacao in('com sensor', 'sem sensor'))
@@ -59,7 +59,7 @@
             ('Marilia', '$Gf541002', '895.279.710-80'),
             ('Manuele', '!!29Pp392', '661.249.030-67'),
             ('Frizza', 'Fz22032024!', '081.087.650-72');
-            
+    
    insert into tipo_produto (nome)
    values ('Bovina'),
 			('Suina'),
@@ -85,3 +85,27 @@
 			('2024-10-04 08:15:02'),
             ('2024-10-04 08:15:03' ),
             ('2024-11-23 19:07:27');
+            
+	select * from empresa;
+    select * from usuario;
+	select * from tipo_produto;
+    select * from veiculo;
+    select * from sensor;
+    select * from leitura;
+    
+    
+    
+    
+    
+    
+	select nome_fantasia as nome, cnpj from empresa;
+    select * from empresa where cnpj like '_2%';
+    select * from empresa where id > 2 order by id desc;
+    
+    
+    select nome from usuario where cpf = '661.249.030-67';
+    select * from usuario where id > 3 and id <= 5;
+    select nome, senha, cpf from usuario where senha like '%!%';
+    
+  
+            
